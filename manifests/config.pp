@@ -42,6 +42,11 @@ class gestao_previa_faturamento::config {
     source => 'puppet:///modules/gestao_previa_faturamento/tomcat/apache/bin/catalina.sh',
   }
 
+  file { "${gestao_previa_faturamento::catalina_home}/conf/context.xml":
+    ensure => file,
+    source => 'puppet:///modules/gestao_previa_faturamento/tomcat/apache/conf/context.xml',
+  }
+
   file { '/etc/systemd/system/tomcat.service':
     ensure  => file,
     content => epp('gestao_previa_faturamento/gestao_previa_faturamento.service.epp'),
