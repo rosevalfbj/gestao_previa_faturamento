@@ -1,0 +1,12 @@
+[Unit]
+Description=GestaoPreviaFaturamento
+
+[Service]
+Type=forking
+User=<%= $gestao_previa_faturamento::user %>
+WorkingDirectory=<%= $gestao_previa_faturamento::catalina_home %>
+ExecStart=<%= $gestao_previa_faturamento::catalina_home %>/bin/catalina.sh start
+ExecStop=<%= $gestao_previa_faturamento::catalina_home %>/bin/catalina.sh stop
+
+[Install]
+WantedBy=multi-user.target
