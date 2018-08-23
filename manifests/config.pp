@@ -11,9 +11,9 @@ class gestao_previa_faturamento::config {
     ensure => directory,
   }
 
-  file { "${gestao_previa_faturamento::ssldir}/${gestao_previa_faturamento::name_cert}":
-    ensure  => file,
-    content => "puppet:///modules/gestao_previa_faturamento/opt/pki/${gestao_previa_faturamento::ambiente}/${gestao_previa_faturamento::name_cert}",
+  file { "${gestao_previa_faturamento::ssldir}/asterisco.algartelecom.com.br.jks":
+    ensure => file,
+    source => 'puppet:///modules/gestao_previa_faturamento/opt/pki/asterisco.algartelecom.com.br.jks',
   }
 
   file { "${gestao_previa_faturamento::catalina_home}/previafaturamento":
@@ -34,6 +34,11 @@ class gestao_previa_faturamento::config {
   file { "${gestao_previa_faturamento::catalina_home}/previafaturamento/application.properties.xml":
     ensure  => file,
     content => template('gestao_previa_faturamento/application.properties.erb'),
+  }
+
+  file { "${gestao_previa_faturamento::catalina_home}/conf/server.xml":
+    ensure  => file,
+    content => template('gestao_previa_faturamento/server.xml.erb'),
   }
 
   file { "${gestao_previa_faturamento::catalina_home}/bin/catalina.sh":
