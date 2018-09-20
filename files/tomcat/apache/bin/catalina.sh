@@ -104,7 +104,7 @@
 JAVA_HOME=/usr/java/jdk1.8.0_151
 CATALINA_HOME=/app/tomcat8
 
-# Configuração específica do projeto ALgarMailing
+# Configuração específica do projeto Gestão Previa Faturamento
 JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/app/tomcat8/logs/"
 JAVA_OPTS="$JAVA_OPTS -Xms1g -Xmx2g -XX:MaxMetaspaceSize=256m -Xss256k"
 JAVA_OPTS="$JAVA_OPTS -Xloggc:/app/tomcat8/logs/gc.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:GCLogFileSize=50m -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=30"
