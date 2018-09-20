@@ -2,6 +2,6 @@
 <Context>
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
-    <ResourceLink auth="Container" global="jdbc/dbm_mailing" name="jdbc/dbm_mailing" 
+    <ResourceLink auth="Container" global="jdbc/previa_faturamento" name="jdbc/previa_faturamento" 
                   type="javax.sql.DataSource"/>
 </Context>
