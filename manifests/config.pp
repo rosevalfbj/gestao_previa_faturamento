@@ -28,6 +28,14 @@ class gestao_previa_faturamento::config {
     content => template('gestao_previa_faturamento/application.properties.erb'),
   }
 
+  ->file { '/etc/init.d/tomcat':
+    ensure  => file,
+    content => template('gestao_previa_faturamento/tomcat.erb'),
+    mode    => '0640',
+    owner   => $gestao_previa_faturamento::user,
+    group   => $gestao_previa_faturamento::group,
+  }
+
   ->file { "${gestao_previa_faturamento::catalina_home}/conf/server.xml":
     ensure  => file,
     content => template('gestao_previa_faturamento/server.xml.erb'),

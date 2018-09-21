@@ -1,0 +1,50 @@
+#!/bin/bash
+# Source networking configuration.
+. /etc/sysconfig/network
+
+  # Check that networking is up.
+  [ ${NETWORKING} = "no" ] && exit 0
+
+  # Set Tomcat environment.
+  export JAVA_HOME="<%= scope.lookupvar('gestao_previa_faturamento::user_java_home') %>"/bin/java
+  export CLASSPATH=.:$JAVA_HOME/default/lib/tools.jar:$JAVA_HOME/default/lib/rt.jar
+  export CATALINA_HOME="<%= scope.lookupvar('gestao_previa_faturamento::catalina_home') %>"
+  export LC_ALL=pt_BR.ISO8859-1
+  export LANG=pt_BR
+
+
+  [ -f $CATALINA_HOME/bin/startup.sh ] || exit 0
+  [ -f $CATALINA_HOME/bin/shutdown.sh ] || exit 0
+
+
+  # See how we were called.
+  case "$1" in
+    start)
+          # Start daemon.
+          echo -n "Starting Tomcat: tomcat"
+          su - tomcat -c $CATALINA_HOME/bin/startup.sh
+          RETVAL=$?
+          echo
+          [ $RETVAL = 0 ] && touch /var/lock/subsys/tomcat
+          ;;
+    stop)
+          # Stop daemons.
+          echo -n "Shutting down Tomcat: tomcat"
+          $CATALINA_HOME/bin/shutdown.sh
+         RETVAL=$?
+          echo
+          [ $RETVAL = 0 ] && rm -f /var/lock/subsys/tomcat
+          ;;
+    restart)
+          $0 stop
+          $0 start
+          ;;
+    condrestart)
+         [ -e /var/lock/subsys/tomcat ] && $0 restart
+         ;;
+    *)
+          echo "Usage: $0 {start|stop|restart}"
+          exit 1
+  esac
+
+  exit 0
