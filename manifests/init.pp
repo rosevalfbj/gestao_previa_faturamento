@@ -9,6 +9,12 @@ class gestao_previa_faturamento (
   String $ambiente                      = 'hom',
   #String $name_cert                    = 'previafaturamento.algartelecom.com.br.jks',
   # COnfiguração Connector Server.xml
+  String $user_java_home                = '/usr/java/default',
+  String $password_user_so              = 'c7bc@Jb0ss',
+  String $usuario                       = 'tomcat',
+  String $home_usuario                  = '/home/tomcat',
+  String $grupo_usuario                 = 'tomcat',
+
   String $port                          = '8080',
   String $connectionTimeout             = '20000',
   String $maxThreads                    = '150',
