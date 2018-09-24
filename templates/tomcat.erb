@@ -6,9 +6,9 @@
   [ ${NETWORKING} = "no" ] && exit 0
 
   # Set Tomcat environment.
-  export JAVA_HOME="<%= scope.lookupvar('gestao_previa_faturamento::user_java_home') %>"/bin/java
+  export JAVA_HOME=<%= scope.lookupvar('gestao_previa_faturamento::user_java_home') %>/bin/java
   export CLASSPATH=.:$JAVA_HOME/default/lib/tools.jar:$JAVA_HOME/default/lib/rt.jar
-  export CATALINA_HOME="<%= scope.lookupvar('gestao_previa_faturamento::catalina_home') %>"
+  export CATALINA_HOME=<%= scope.lookupvar('gestao_previa_faturamento::catalina_home') %>
   export LC_ALL=pt_BR.ISO8859-1
   export LANG=pt_BR
 

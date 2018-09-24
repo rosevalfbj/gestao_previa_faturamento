@@ -64,7 +64,7 @@
                 sslEnabledProtocols="<%= scope.lookupvar('gestao_previa_faturamento::sslEnabledProtocols') %>"
                 ciphers="<%= scope.lookupvar('gestao_previa_faturamento::ciphers') %>" />
 
-    <Connector port="<%= scope.lookupvar('gestao_previa_faturamento::port_ajp') %>" protocol="AJP/1.3" redirectPort="<%= scope.lookupvar('mailing::redirectPort') %>" address="0.0.0.0"/>
+    <Connector port="<%= scope.lookupvar('gestao_previa_faturamento::port_ajp') %>" protocol="AJP/1.3" redirectPort="<%= scope.lookupvar('gestao_previa_faturamento::redirectPort') %>" address="0.0.0.0"/>
 
     <Engine name="Catalina" defaultHost="<%= scope.lookupvar('gestao_previa_faturamento::defaulthost') %>">
     <Realm className="org.apache.catalina.realm.LockOutRealm">
