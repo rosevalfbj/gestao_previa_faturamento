@@ -25,6 +25,9 @@ class gestao_previa_faturamento::config {
 
   ->file { "${gestao_previa_faturamento::catalina_home}/previafaturamento/application.properties.xml":
     ensure  => file,
+    mode    => '0640',
+    owner   => $gestao_previa_faturamento::user,
+    group   => $gestao_previa_faturamento::group,
     content => template('gestao_previa_faturamento/application.properties.erb'),
   }
 
