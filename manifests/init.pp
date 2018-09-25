@@ -29,6 +29,9 @@ class gestao_previa_faturamento (
   String $proxyPort                     ='443',
   #String $port_idp                     = '8080',
   String $protocolo_idp                 = 'http',
+  String $user_idp                      = 'admin',
+  String $password_idp                  = 'admin',
+
   String $proxyName                     = 'previafaturamentohom.algartelecom.com.br',
   String $keystoreFile                  = '/opt/pki/asterisco.algartelecom.com.br.jks',
   String $keystorePass                  = 'Algar2018@',
