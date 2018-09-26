@@ -1,7 +1,8 @@
 filterUser = *
-filterRole = ALGARCSM*
+filterRole = ALGARPREVIA*
 limit = 1000
-idp.user = "<%= scope.lookupvar('gestao_previa_faturamento::user_idp') %>"
-idp.password = "<%= scope.lookupvar('gestao_previa_faturamento::password_idp') %>"
-subjectPrefix = 
-ROLE_PREFIX = ALGARCSM_
+idp.user="<%= scope.lookupvar('gestao_previa_faturamento::user_idp') %>"
+idp.password="<%= scope.lookupvar('gestao_previa_faturamento::password_idp') %>"
+idp.subject.prefix=ALGARIDP/
+idp.role.prefix=ALGARIDP/
+ROLE_PREFIX = ALGARPREVIA_

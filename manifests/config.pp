@@ -23,7 +23,7 @@ class gestao_previa_faturamento::config {
     group  => $gestao_previa_faturamento::group,
   }
 
-  ->file { "${gestao_previa_faturamento::catalina_home}/previafaturamento/application.properties.xml":
+  ->file { "${gestao_previa_faturamento::catalina_home}/previafaturamento/application.properties":
     ensure  => file,
     mode    => '0640',
     owner   => $gestao_previa_faturamento::user,
