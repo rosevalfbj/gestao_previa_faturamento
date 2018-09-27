@@ -13,6 +13,9 @@ class gestao_previa_faturamento::config {
 
   ->file { "${gestao_previa_faturamento::ssldir}/asterisco.algartelecom.com.br.jks":
     ensure => file,
+    mode  => '0640',
+    owner => $gestao_previa_faturamento::user,
+    group => $gestao_previa_faturamento::group,
     source => 'puppet:///modules/gestao_previa_faturamento/opt/pki/asterisco.algartelecom.com.br.jks',
   }
 
