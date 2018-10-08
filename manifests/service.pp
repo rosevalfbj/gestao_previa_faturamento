@@ -2,7 +2,7 @@
 
 class gestao_previa_faturamento::service {
 
-  service { $module_name:
+  service { 'tomcat':
     ensure => 'running',
     enable => true,
   }
