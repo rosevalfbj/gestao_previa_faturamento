@@ -77,9 +77,9 @@ class gestao_previa_faturamento::config {
     content => epp('gestao_previa_faturamento/gestao_previa_faturamento.service.epp'),
   }
 
-  ->exec { 'daemon-reload':
-    path    => '/bin',
-    command => 'systemctl daemon-reload',
-    unless  => 'systemctl list-unit-files | grep tomcat.service'
-  }
+  #->exec { 'daemon-reload':
+  #  path    => '/bin',
+  #  command => 'systemctl daemon-reload',
+  #  unless  => 'systemctl list-unit-files | grep tomcat.service'
+  #}
 }
