@@ -75,7 +75,7 @@ class gestao_previa_faturamento (
 contain gestao_previa_faturamento::config
 #contain gestao_previa_faturamento::service
 
-  Class['gestao_previa_faturamento::config']
+  #Class['gestao_previa_faturamento::config']
     #~> Class['gestao_previa_faturamento::service']
 
 }
